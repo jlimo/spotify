@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/jlimo/spotify.git",
   "author": "<joleanflima@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-bootstrap": "^2.8.0"
+  }
 }
