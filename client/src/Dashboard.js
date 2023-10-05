@@ -4,7 +4,7 @@ import { Container, Form } from 'react-bootstrap';
 import SpotifyWebApi from 'spotify-web-api-node';
 
 const spotifyWebApi = new SpotifyWebApi ({
-    clientId: 'bf14bfb9cc244a3f99e7d027b077a331',
+    clientId: '162a5fdfd17f4bce92ffe132f4aecdec',
 })
 
 export default function Dashboard({ code }) {
@@ -21,7 +21,9 @@ export default function Dashboard({ code }) {
     if (!search) return setSearchResults([])
     if(!accessToken) return
 
+    let cancel = false
     spotifyWebApi.searchTracks(search).then(res => {
+        if (cancel) return
         setSearchResults(res.body.tracks.items.map(track => {
             const smallestAlubmImage = track.album.images.reduce(
                 (smallest, image) => {
@@ -36,8 +38,10 @@ export default function Dashboard({ code }) {
                 genre: track.genre,
                 albumUrl: smallestAlubmImage.url
             }
-        }))
-    })
+        })
+        )
+    }) 
+        return () => cancel = true
     }, [search, accessToken])
 
   return (

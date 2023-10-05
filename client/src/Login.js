@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
 
-const AUTH_URL =   "https://accounts.spotify.com/authorize?client_id=bf14bfb9cc244a3f99e7d027b077a331&response_type=code&redirect_uri=https://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state"
+const AUTH_URL =  "https://accounts.spotify.com/authorize?client_id=162a5fdfd17f4bce92ffe132f4aecdec&response_type=code&redirect_uri=https://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state"
 
 export default function Login() {
   return (
     <Container className="d-flex justify-center align-items-center" style={{ minHeight: "100vh" }}>
-        
+
         <a className='btn btn-success btn-lg' href={AUTH_URL}>Login</a>
     </Container>
   )
